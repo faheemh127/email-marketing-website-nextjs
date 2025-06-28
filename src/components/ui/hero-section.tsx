@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Play, Calendar, Star } from 'lucide-react';
+import { Play, Calendar, Star } from "lucide-react";
 
 const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-blue-50 py-20 lg:py-32">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          
           {/* Left Content */}
           <div className="space-y-8">
             {/* Small Heading */}
@@ -18,21 +17,22 @@ const HeroSection = () => {
 
             {/* Main Heading */}
             <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
-              Get Started With{' '}
-              <span className="text-blue-600">Cold Email Infrastructure</span>{' '}
+              Get Started With{" "}
+              <span className="text-blue-600">Cold Email Infrastructure</span>{" "}
               Ready In Minutes
             </h1>
 
             {/* Sub Heading */}
             <p className="text-xl text-gray-600 leading-relaxed">
-              Create hundreds of domains and mailboxes using a distributed email infrastructure 
-              with excellent deliverability and free automated setup. Cold outreach made easy!
+              Create hundreds of domains and mailboxes using a distributed email
+              infrastructure with excellent deliverability and free automated
+              setup. Cold outreach made easy!
             </p>
 
             {/* Email Input */}
             <div className="flex flex-col sm:flex-row gap-4 max-w-md">
-              <Input 
-                type="email" 
+              <Input
+                type="email"
                 placeholder="Enter your email address"
                 className="flex-1 h-12 text-base"
               />
@@ -78,7 +78,8 @@ const HeroSection = () => {
 
             <div className="text-center sm:text-left pt-4">
               <p className="text-sm text-gray-600">
-                <span className="font-semibold text-gray-900">1K+</span> Community
+                <span className="font-semibold text-gray-900">1K+</span>{" "}
+                Community
               </p>
             </div>
           </div>
@@ -94,16 +95,21 @@ const HeroSection = () => {
               <defs>
                 <radialGradient id="glow" cx="50%" cy="50%" r="50%">
                   <stop offset="0%" stopColor="#3B82F6" stopOpacity="0.1">
-                    <animate attributeName="stop-opacity" values="0.1;0.3;0.1" dur="3s" repeatCount="indefinite" />
+                    <animate
+                      attributeName="stop-opacity"
+                      values="0.1;0.3;0.1"
+                      dur="3s"
+                      repeatCount="indefinite"
+                    />
                   </stop>
                   <stop offset="100%" stopColor="#3B82F6" stopOpacity="0" />
                 </radialGradient>
-                
+
                 <filter id="shine">
-                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                  <feMerge> 
-                    <feMergeNode in="coloredBlur"/>
-                    <feMergeNode in="SourceGraphic"/>
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur" />
+                  <feMerge>
+                    <feMergeNode in="coloredBlur" />
+                    <feMergeNode in="SourceGraphic" />
                   </feMerge>
                 </filter>
               </defs>
@@ -146,7 +152,7 @@ const HeroSection = () => {
                 { x: 450, y: 150, angle: 45 },
                 { x: 500, y: 300, angle: 0 },
                 { x: 450, y: 450, angle: 135 },
-                { x: 150, y: 450, angle: -135 }
+                { x: 150, y: 450, angle: -135 },
               ].map((point, index) => (
                 <g key={index}>
                   <line
@@ -166,15 +172,19 @@ const HeroSection = () => {
                       repeatCount="indefinite"
                     />
                   </line>
-                  
+
                   {/* Glowing dots moving along lines */}
                   <circle r="4" fill="#60A5FA" filter="url(#shine)">
                     <animateMotion dur="3s" repeatCount="indefinite">
                       <mpath href={`#path${index}`} />
                     </animateMotion>
                   </circle>
-                  
-                  <path id={`path${index}`} d={`M300,300 L${point.x},${point.y}`} opacity="0" />
+
+                  <path
+                    id={`path${index}`}
+                    d={`M300,300 L${point.x},${point.y}`}
+                    opacity="0"
+                  />
                 </g>
               ))}
 
@@ -184,7 +194,7 @@ const HeroSection = () => {
                 { x: 450, y: 150, title: "16", subtitle: "SSL Domains" },
                 { x: 500, y: 300, title: "2000", subtitle: "Mailbox Slots" },
                 { x: 450, y: 450, title: "574", subtitle: "Active Mailboxes" },
-                { x: 150, y: 450, title: "∞", subtitle: "Shared IPs" }
+                { x: 150, y: 450, title: "∞", subtitle: "Shared IPs" },
               ].map((stat, index) => (
                 <g key={index} transform={`translate(${stat.x}, ${stat.y})`}>
                   <rect
